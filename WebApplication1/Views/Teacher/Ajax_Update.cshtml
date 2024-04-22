@@ -1,0 +1,59 @@
+﻿﻿
+
+﻿@model WebApplication1.Models.Teacher
+
+@{
+    ViewBag.Title = "AJAX UPDATE";
+}
+@{
+
+    /*
+    This file uses a combination of server rendering and ajax logic.
+    - Server Rendering to pull current information about the author and display in fields
+    - Request to update author with new values is fulfilled by ajax
+    */
+}
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/Teacher/List">Back To Teacher</a>
+    </nav>
+    <h2>New Author</h2>
+    @{
+        /* AJAX Request to add Teacher */
+        /* No form submission needed */
+        /* button onclick will handle form submission */
+        /* Each item has an ID for validation && ajax submission */
+
+    }
+
+    <div class="inputrow">
+        <label for="TeacherFname">First Name:</label>
+        <input type="text" id="TeacherFname" name="TeacherFname" value="@Model.teacherFname" />
+    </div>
+
+    <div class="inputrow">
+        <label for="TeacherLname">Last Name:</label>
+        <input type="text" id="TeacherLname" name="TeacherLname" value="@Model.teacherLname" />
+    </div>
+
+    <div class="inputrow">
+        <label for="HireDate">Hire Date:</label>
+        <input type="date" id="HireDate" name="HireDate" value="@Model.hiredate" />
+    </div>
+
+    <div class="inputrow">
+        <label for="EmployeeNumber">EmployeeNumber:</label>
+        <input type="text" id="EmployeeNumber" name="EmployeeNumber" value="@Model.employeenumber" />
+    </div>
+
+    <div>
+        <label for="Salary">Salary:</label>
+        <input type="Number" id="Salary" name="Salary" value="@Model.salary" />
+    </div>
+
+    @{
+        //AddTeacher() is a JS method defined in /Scripts/teacher.js
+    }
+    <button onclick="AddTeacher();">Add Teacher</button>
+</div>
